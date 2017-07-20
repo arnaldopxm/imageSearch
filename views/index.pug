@@ -1,0 +1,74 @@
+html
+  head
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+    title Image API Searcher
+  body
+    div(class='jumbotron')
+      div(class='container')
+        h1 Image API Searcher
+    div(class='container')
+      h2 User stories:
+      ul(style="font-size:150%;")
+        li I can get the image URLs, alt text and page urls for a set of images relating to a given search string.
+        li I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+        li I can get a list of the most recently submitted search strings.
+
+    div(class='container')
+      div(class='col-lg-8')
+        div(class='container')
+          div(class='col-lg-12')
+            h3 Example Of Search:
+            div(class='row',style="margin:10px;font-size:120%")
+              code https://half-cucumber.glitch.me/api/imagesearch/{search}
+            div(class='row',style="margin:10px;font-size:120%")
+              code https://half-cucumber.glitch.me/api/imagesearch/cats
+
+        div(class='container')
+          div(class='col-lg-12')
+            h3 Example Of Search With Offset:
+            div(class='row',style="margin:10px;font-size:120%")
+              code https://half-cucumber.glitch.me/api/imagesearch/{search}?offset={num}
+            div(class='row',style="margin:10px;font-size:120%")
+              code https://half-cucumber.glitch.me/api/imagesearch/cats?offset=2
+
+        div(class='container')
+          div(class='col-lg-12')
+            h3 Latest Search Queries:
+            div(class='row',style="margin:10px;font-size:120%")
+              code https://half-cucumber.glitch.me/api/latest/imagesearch
+      
+      div(class='col-lg-4')
+        div(class='col-lg-12')
+          h3 Example Of Search Result:
+          div(class='row',style="margin:10px;font-size:120%")
+            pre: code.language-json
+                = '{\n'
+                = '  "0" : \n'
+                = '    {\n'
+                = '      "url" : {img_url},\n'
+                = '      "snippet" : {img_text},\n'
+                = '      "thumbnail" : {img_thumb}\n'
+                = '    },\n'
+                = '  "1" : \n'
+                = '    {\n'
+                = '      "url" : {img_url},\n'
+                = '      "snippet" : {img_text},\n'
+                = '      "thumbnail" : {img_thumb}\n'
+                = '    },\n'
+                = '  }\n'
+                = '}'
+
+    div(class='container')
+      footer(style='background-color:#EEEEEE;border-radius:5px;')
+        div(class='row')
+          div(class='col-sm-6 text-right',style='margin-top:2px;')
+            p(style='margin-top:3px;') Developed by Arnaldo Quintero.
+          div(class='col-sm-6',style='margin-top:2px;')
+            a(href='https://twitter.com/kutuplaa',target='_blank')
+              i(class='fa fa-twitter-square fa-2x')
+            a(href='https://github.com/arnaldopxm', target='_blank')
+              i(class='fa fa-github fa-2x')
+            a(href='https://ve.linkedin.com/in/arnaldo-quintero-segura-306750124',target='_blank')
+              i(class='fa fa-linkedin-square fa-2x')
